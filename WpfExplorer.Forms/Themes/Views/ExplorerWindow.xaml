@@ -1,0 +1,26 @@
+﻿<ResourceDictionary  
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:james="clr-namespace:Jamesnet.Wpf.Controls;assembly=Jamesnet.Wpf"
+    xmlns:based="clr-namespace:WpfExplorerSupport.UI.Units;assembly=WpfExplorerSupport"
+    xmlns:views="clr-namespace:WpfExplorer.Forms.UI.Views"
+    xmlns:units="clr-namespace:WpfExplorer.Forms.UI.Units">
+                     
+    <Style 
+        TargetType="{x:Type views:ExplorerWindow}" 
+        BasedOn="{StaticResource {x:Type based:DarkWindow}}">
+        <Setter Property="Content">
+            <Setter.Value>
+                <StackPanel Orientation="Vertical">
+                <james:JamesRegion RegionName="MainRegion"/>
+                    <units:FolderTreeView>
+                        <TreeViewItem>Lucas</TreeViewItem>
+                        <TreeViewItem>Kevin</TreeViewItem>
+                        <TreeViewItem>Joolo</TreeViewItem>
+                    </units:FolderTreeView>
+                </StackPanel>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

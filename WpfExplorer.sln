@@ -3,9 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfExplorer", "WpfExplorer\WpfExplorer.csproj", "{4D38D5AC-23B3-4AE4-BF08-86A99C3928E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfExplorer", "WpfExplorer\WpfExplorer.csproj", "{4D38D5AC-23B3-4AE4-BF08-86A99C3928E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfExplorerSupport", "WpfExplorerSupport\WpfExplorerSupport.csproj", "{B1C44251-1488-4D37-B4A2-4DE1C0D63007}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfExplorerSupport", "WpfExplorerSupport\WpfExplorerSupport.csproj", "{B1C44251-1488-4D37-B4A2-4DE1C0D63007}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfExplorer.Forms", "WpfExplorer.Forms\WpfExplorer.Forms.csproj", "{5899FE0D-A849-40EC-8CA8-9EB0CBD4BCA5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfExplorer.Main", "WpfExplorer.Main\WpfExplorer.Main.csproj", "{DF18F052-2527-4A71-961F-C510D3146EFF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "솔루션 항목", "솔루션 항목", "{AC35E70F-E452-4CCC-890E-FE331D1CA126}"
+	ProjectSection(SolutionItems) = preProject
+		TextFile1.txt = TextFile1.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +30,14 @@ Global
 		{B1C44251-1488-4D37-B4A2-4DE1C0D63007}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1C44251-1488-4D37-B4A2-4DE1C0D63007}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1C44251-1488-4D37-B4A2-4DE1C0D63007}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5899FE0D-A849-40EC-8CA8-9EB0CBD4BCA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5899FE0D-A849-40EC-8CA8-9EB0CBD4BCA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5899FE0D-A849-40EC-8CA8-9EB0CBD4BCA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5899FE0D-A849-40EC-8CA8-9EB0CBD4BCA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF18F052-2527-4A71-961F-C510D3146EFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF18F052-2527-4A71-961F-C510D3146EFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF18F052-2527-4A71-961F-C510D3146EFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF18F052-2527-4A71-961F-C510D3146EFF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

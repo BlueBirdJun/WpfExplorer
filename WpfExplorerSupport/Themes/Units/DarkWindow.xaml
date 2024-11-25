@@ -44,8 +44,8 @@
                             <Border Grid.ColumnSpan="4"
                                     Background="#333222"/>
                             <units:MinimizeButton Grid.Column="1"/>
-                            <units:MaximizeButton Grid.Column="2"/>
-                            <units:CloseButton Grid.Column="3"/>
+                            <units:MaximizeButton Grid.Column="2" />
+                            <units:CloseButton Grid.Column="3" Command="{Binding CloseButton}"/>
                             <ContentPresenter 
                                 Grid.Row="1" 
                                 Grid.ColumnSpan="4"

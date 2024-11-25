@@ -1,4 +1,5 @@
-﻿using Jamesnet.Wpf.Controls;
+﻿using CommunityToolkit.Mvvm.Input;
+using Jamesnet.Wpf.Controls;
 using Jamesnet.Wpf.Mvvm;
 using Prism.Ioc;
 using Prism.Regions;
@@ -7,11 +8,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 
 namespace WpfExplorer.Forms.Local.ViewModels
 {
-    public class ExplorerViewModel : ObservableBase, IViewLoadable
+    public partial class ExplorerViewModel : ObservableBase, IViewLoadable
     {
         private readonly IContainerProvider _containerProvider;
         private readonly IRegionManager _regionManager;
@@ -35,6 +37,13 @@ namespace WpfExplorer.Forms.Local.ViewModels
                 mainRegion.Add(mainContent);
             }
             mainRegion.Activate(mainContent);
+            MessageBox.Show("Show");
+        }
+
+        [RelayCommand]
+        private void CloseButton()
+        {
+            MessageBox.Show("close");
         }
     }
 }

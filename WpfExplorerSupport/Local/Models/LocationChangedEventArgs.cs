@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace WpfExplorerSupport.Local.Models
 {
-    internal class LocationChangedEventArgs
+    public class LocationChangedEventArgs : EventArgs
     {
+        public FileInfoBase Current { get; }
+
+        public LocationChangedEventArgs(FileInfoBase current)
+        {
+            Current = current;
+        }
     }
 }

@@ -6,7 +6,18 @@ using System.Threading.Tasks;
 
 namespace WpfExplorerSupport.Local.Models
 {
-    internal class Memento
+    public class Memento
     {
+        private string _fullPath;
+
+        public Memento(string fullPath)
+        {
+            _fullPath = fullPath;
+        }
+
+        public string GetSavedFullPath()
+        {
+            return _fullPath;
+        }
     }
 }

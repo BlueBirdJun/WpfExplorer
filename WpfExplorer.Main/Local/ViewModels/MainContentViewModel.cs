@@ -18,25 +18,26 @@ namespace WpfExplorer.Main.Local.ViewModels
         //public ICommand FolderChangedCommand { get; init; }
         private readonly FileService _fileService;
         private readonly NavigatorService _navigatorService;
+
         public List<Folderinfo> Roots { get; init; }
         public ObservableCollection<Folderinfo> Files { get; init; }
+        public ObservableCollection<LocationInfo> Locations { get; init; }
+
         public MainContentViewModel(FileService fileService, NavigatorService navigatorService)
         {
             _fileService = fileService;
             _navigatorService = navigatorService;
             _navigatorService.LocationChanged += _navigatorService_LocationChanged;
 
-            //FolderChangedCommand = new RelayCommand<Folderinfo>(FolderChanged);
-            Roots = fileService.GenerateRootNodes();
+            Roots = _fileService.GenerateRootNodes();
             Files = new();
+            Locations = new();
         }
+
         private void _navigatorService_LocationChanged(object? sender, LocationChangedEventArgs e)
         {
-            //List<Folderinfo> source = GetDirectoryItems(e.Current.FullPath);
-
-            //Files.Clear();
-            //Files.AddRange(source);
             _fileService.TryRefreshFiles(Files, out bool isDenied);
+            _fileService.RefreshLocations(Locations);
         }
         //private void FolderChanged(Folderinfo folderInfo)
         //{

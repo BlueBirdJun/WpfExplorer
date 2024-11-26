@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace WpfExplorerSupport.Local.Models
 {
-    internal class LocationInfo
+    public class LocationInfo : FileInfoBase
     {
+        public int Zindex { get; set; }
+        public string Color { get; set; }
+        public bool IsRoot { get; set; }
+        public bool IsLast { get; set; }
+
+        public LocationInfo(string name, string fullName)
+        {
+            Name = name;
+            FullPath = fullName;
+        }
     }
 }

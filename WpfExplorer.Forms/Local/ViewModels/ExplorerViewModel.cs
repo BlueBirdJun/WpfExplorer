@@ -26,7 +26,7 @@ namespace WpfExplorer.Forms.Local.ViewModels
         {
             _containerProvider = containerProvider;
             _regionManager = regionManager;
-            
+            MaxButtonICon = "Apple";
         }
 
         public void OnLoaded(IViewable view)
@@ -43,6 +43,9 @@ namespace WpfExplorer.Forms.Local.ViewModels
             //MessageBox.Show("Show");
         }
 
+        public string MaxButtonICon { get; set; }// = "Apple";//Maximize
+
+
         [RelayCommand]
         private void Btn(string parameter)
         {
@@ -53,9 +56,16 @@ namespace WpfExplorer.Forms.Local.ViewModels
                     break;
                 case "Max":
                     if(window.WindowState != WindowState.Maximized)
+                    {
+                        MaxButtonICon = "Apple";
                         window.WindowState = WindowState.Maximized;
+                    }                        
                     else
+                    {
                         window.WindowState = WindowState.Normal;
+                        MaxButtonICon = "Maximize";
+                    }
+                        
                     break;
                 case "Close":
                     if(MessageBox.Show("닫을래", "Explorer", MessageBoxButton.YesNo) == MessageBoxResult.Yes)

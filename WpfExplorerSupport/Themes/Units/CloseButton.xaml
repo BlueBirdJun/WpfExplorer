@@ -8,8 +8,7 @@
         <Setter Property="Foreground" Value="#FFFFFF"/>
         <Setter Property="Width" Value="35"/>
         <Setter Property="Height" Value="35"/>
-        <Setter Property="Margin" Value="0"/>
-        <Setter Property="Command" Value="{Binding CloseBtn}" />
+        <Setter Property="Margin" Value="0"/>        
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type units:CloseButton}" >
@@ -22,11 +21,10 @@
                     
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="#E04343"/>
+                            <Setter Property="Background" Value="Blue"/>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
-                            <Setter Property="Background" Value="#B43838"/>
-                            
+                            <Setter Property="Background" Value="#B43838"/>                            
                         </Trigger>                        
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

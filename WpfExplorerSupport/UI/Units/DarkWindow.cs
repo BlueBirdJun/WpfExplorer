@@ -21,6 +21,19 @@ namespace WpfExplorerSupport.UI.Units
 
             Border border = GetTemplateChild("PART_Bar") as Border;
             border.MouseMove += Border_MouseMove;
+            border.MouseLeftButtonDown += Border_MouseLeftButtonDown;
+        }
+
+        private void Border_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            if (e.ClickCount == 2)
+            {
+                if(this.WindowState == WindowState.Normal)
+                    this.WindowState = WindowState.Maximized; 
+                else
+                    this.WindowState = WindowState.Normal;
+
+            }
         }
 
         private void Border_MouseMove(object sender, System.Windows.Input.MouseEventArgs e)

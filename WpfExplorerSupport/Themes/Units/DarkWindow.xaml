@@ -3,6 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:units="clr-namespace:WpfExplorerSupport.UI.Units">
     <Style TargetType="{x:Type units:DarkWindow}">
+        
         <Setter Property="Background" Value="#252525"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="BorderBrush" Value="#141414"/>
@@ -42,10 +43,16 @@
                                 <ColumnDefinition Width="Auto"/>
                             </Grid.ColumnDefinitions>
                             <Border Grid.ColumnSpan="4"
-                                    Background="#333222"/>
-                            <units:MinimizeButton Grid.Column="1"/>
-                            <units:MaximizeButton Grid.Column="2" />
-                            <units:CloseButton Grid.Column="3" Command="{Binding CloseBtn}"/>
+                                    x:Name="PART_Bar"
+                                     Background="{TemplateBinding Background}"
+                                 BorderBrush="Red"
+                                 BorderThickness="{TemplateBinding BorderThickness}"
+                                 UseLayoutRounding="{TemplateBinding UseLayoutRounding}"
+                                 SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                    />
+                            <units:MinimizeButton Grid.Column="1" Command="{Binding BtnCommand}" CommandParameter="Mini"/>
+                            <units:MaximizeButton Grid.Column="2" Command="{Binding BtnCommand}" CommandParameter="Max" />
+                            <units:CloseButton Grid.Column="3"   Command="{Binding BtnCommand}" CommandParameter="Close" />
                             <ContentPresenter 
                                 Grid.Row="1" 
                                 Grid.ColumnSpan="4"

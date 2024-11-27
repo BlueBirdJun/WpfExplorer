@@ -18,7 +18,7 @@ namespace WpfExplorer.Properties
         protected override void Match(ViewModelLocatorCollection items)
         {
 
-            items.Register<DarkWindow, DarkWindowViewModel>();
+            //items.Register<DarkWindow, DarkWindowViewModel>();
             items.Register<MainContent, MainContentViewModel>();
             items.Register<ExplorerWindow, ExplorerViewModel>();
         }

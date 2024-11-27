@@ -17,6 +17,7 @@ namespace WpfExplorer.Forms.Local.ViewModels
     {
         private readonly IContainerProvider _containerProvider;
         private readonly IRegionManager _regionManager;
+        private  IViewable _view;
 
         //public List<FolderInfo> Roots { get; init; }
 
@@ -25,10 +26,12 @@ namespace WpfExplorer.Forms.Local.ViewModels
         {
             _containerProvider = containerProvider;
             _regionManager = regionManager;
+            
         }
 
         public void OnLoaded(IViewable view)
         {
+            _view = view;
             IRegion mainRegion = _regionManager.Regions["MainRegion"];
             IViewable mainContent = _containerProvider.Resolve<IViewable>("MainContent");
 
@@ -37,13 +40,32 @@ namespace WpfExplorer.Forms.Local.ViewModels
                 mainRegion.Add(mainContent);
             }
             mainRegion.Activate(mainContent);
-            MessageBox.Show("Show");
+            //MessageBox.Show("Show");
         }
 
         [RelayCommand]
-        private void CloseButton()
+        private void Btn(string parameter)
         {
-            MessageBox.Show("close");
+            Window window = Window.GetWindow(_view.View);            
+            switch(parameter) {
+                case "Mini":
+                    window.WindowState = WindowState.Minimized;
+                    break;
+                case "Max":
+                    if(window.WindowState != WindowState.Maximized)
+                        window.WindowState = WindowState.Maximized;
+                    else
+                        window.WindowState = WindowState.Normal;
+                    break;
+                case "Close":
+                    if(MessageBox.Show("닫을래", "Explorer", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                    {
+                        window.Close();
+                    }
+
+                    break;
+            }
+
         }
     }
 }

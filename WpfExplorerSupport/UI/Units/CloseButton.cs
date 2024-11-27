@@ -15,5 +15,10 @@ namespace WpfExplorerSupport.UI.Units
             DefaultStyleKeyProperty.OverrideMetadata(typeof(CloseButton),
                 new FrameworkPropertyMetadata(typeof(CloseButton)));
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("aaa");
+        }
     }
 }

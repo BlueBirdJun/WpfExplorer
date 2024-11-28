@@ -21,6 +21,7 @@ namespace WpfExplorerSupport.UI.Units
 
             Border border = GetTemplateChild("PART_Bar") as Border;
             border.MouseMove += Border_MouseMove;
+            
         }
 
         private void Border_MouseMove(object sender, System.Windows.Input.MouseEventArgs e)
